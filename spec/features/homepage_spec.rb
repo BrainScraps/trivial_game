@@ -4,37 +4,33 @@ describe "homepage", js: true do
 
   before do
     visit root_path
+    click_link "Start New Game"
   end
 
   it "activates player turn on key press" do
-    find("#element_id").native.send_keys :tab
+    keydown("A")
+    expect(page).to have_css('background_color', 'red')
   end
 
   it "starts new round after incorrect answer" do
-    select('San Francisco', :from => 'origin_airport_pulldown_id')
-    click_link "Submit origin"
+    keydown("A")
+    click_div "#A2"
 
-    expect(page).to have_css('destination_airport_pulldown_id')
+    expect(page).to have_css('background_color', 'default')
   end
 
   it "increases players score on correct answer" do
-    select('San Francisco', :from => 'origin_airport_pulldown_id')
-    click_link "Submit origin"
-    select('Philadelphia', :from => 'destination_airport_pulldown_id')
-    click_link "Submit destination"
-
-    expect(page).to have_css('departure_times_pulldown_id')
+    keydown("A")
+    click_div "A1"
+    old_score = p1_score
+    expect(current_player_score).to_not be_equal(old_score)
   end
 
   it "increases the question counter when new question is loaded" do
-    select('San Francisco', :from => 'origin_airport_pulldown_id')
-    click_link "Submit origin"
-    select('Philadelphia', :from => 'destination_airport_pulldown_id')
-    click_link "Submit destination"
-    select("2013/08/01 18:00:00")
-    click_link "View flight"
-
-    expect(page).to have_css('seating_chart_id')
+    keydown("A")
+    click_div "A1"
+    old_question_number = session_question_number
+    expect(current_question_number).to_not be_equal(old_question_number)
   end
 
 end
