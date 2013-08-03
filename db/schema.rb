@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(:version => 20130802213128) do
 
   create_table "answers", :force => true do |t|
     t.text     "content"
-    t.boolean  "is_correct"
+    t.boolean  "is_correct",  :default => false
     t.integer  "question_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "questions", :force => true do |t|

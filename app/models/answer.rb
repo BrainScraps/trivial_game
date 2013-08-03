@@ -3,6 +3,6 @@ class Answer < ActiveRecord::Base
 
   attr_accessible :content, :is_correct, :question_id
 
-  validates_presence_of :is_correct, :content, :question_id
+  validates_presence_of :content, :question_id
 
 end
