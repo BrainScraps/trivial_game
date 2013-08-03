@@ -1,7 +1,7 @@
 <nav>
   Nav Bar
   <div id="brand_title">Brand</div>
-  <div id="new_game">New Game</div>
+  <button id="new_game" class="button">New Game</button>
 </nav>
 
 <div id="game_window">
@@ -14,13 +14,18 @@
   </div>
 
   <div id="speech_box">
-    Speech Box
-    <span id="question_number">Question Number</span>
-    <div id="question">Question Text</div>
-    <div class="answer" id="a1">Answer 1</div>
-    <div class="answer" id="a2">Answer 2</div>
-    <div class="answer" id="a3">Answer 3</div>
-    <div class="answer" id="a4">Answer 4</div>
+    <% if @round %>
+      <p> Here is your question: </p>
+      <span id="question_number">Question Number <%= @round %> </span>
+      <div id="question"><%= @question.content %> </div>
+      <div class="answer" id="a1"> <%= @question.answers[0].content %></div>
+      <div class="answer" id="a2"><%= @question.answers[1].content %></div>
+      <div class="answer" id="a3"><%= @question.answers[2].content %></div>
+      <div class="answer" id="a4"><%= @question.answers[3].content %></div>
+    <% else %>
+      <p><%= "Welcome to The Name of This Game click start up there ^^^"%> </p>
+    <% end %>
+
   </div>
 </div>
 

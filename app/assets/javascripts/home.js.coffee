@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+
+  new_game_request = ->
+    $.ajax(
+        dataType: 'script',
+        type: 'POST',
+        url: 'start_game'
+    )
+  $('#new_game').on('click', new_game_request)
