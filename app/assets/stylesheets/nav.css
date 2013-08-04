@@ -9,14 +9,12 @@ nav {
   text-align: center;
   font-size: 30px;
   width: 100%;
-  padding:15px;
-  color:white;
-  position: absolute;
+  color: white;
+  padding-top: 5px;
 }
 
 #new_game{
   float: right;
-  z-index: 10;
 }
 
 div {
