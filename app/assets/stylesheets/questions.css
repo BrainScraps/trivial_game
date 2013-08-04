@@ -3,11 +3,11 @@
 }
 
 .answer {
-  border: 5px solid black;
+/*  border: 5px solid black;
   -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
-      border-radius: 50px;
+      border-radius: 50px;*/
   padding:5px;
   margin:5px;
-  width: 320px;
+  width: 380px;
 }

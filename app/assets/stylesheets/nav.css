@@ -1,20 +1,23 @@
 nav {
   margin: 0 auto;
-  height: 60px;
-  border: 1px solid black;
+  height: 50px;
   background-color: black;
+  padding-top: 20px;
 }
 
 #brand_title{
   text-align: center;
   font-size: 30px;
   width: 100%;
-  color: white;
-  padding-top: 5px;
+  color: #ec8305;
+  position: absolute;
 }
 
 #new_game{
   float: right;
+  position: relative;
+  z-index: 10;
+  margin-right: 10px;
 }
 
 div {

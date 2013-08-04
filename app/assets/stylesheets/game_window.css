@@ -11,7 +11,7 @@
   float: left;
   bottom:0;
   position: absolute;
-  background-image: url("/assets/hashstashthecat.png");
+  /*background-image: url("/assets/hashstashthecat.png");*/
 }
 
 #speech_box {

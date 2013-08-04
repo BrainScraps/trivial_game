@@ -2,10 +2,10 @@
   <p> Here is your question: </p>
   <span id="question_number">Question <%= round %> </span>
   <div id="question"><%= question.content %> </div>
-  <div class="answer" id="<%= question.answers[0].id%>"><%= question.answers[0].content %></div>
-  <div class="answer" id="<%= question.answers[1].id%>"><%= question.answers[1].content %></div>
-  <div class="answer" id="<%= question.answers[2].id%>"><%= question.answers[2].content %></div>
-  <div class="answer" id="<%= question.answers[3].id%>"><%= question.answers[3].content %></div>
+  <div class="answer" id="<%= question.answers[0].id%>">{A => <%= question.answers[0].content %>}</div>
+  <div class="answer" id="<%= question.answers[1].id%>">{B => <%= question.answers[1].content %>}</div>
+  <div class="answer" id="<%= question.answers[2].id%>">{C => <%= question.answers[2].content %>}</div>
+  <div class="answer" id="<%= question.answers[3].id%>">{D => <%= question.answers[3].content %>}</div>
 <% else %>
   <p><%= "Welcome to (The_Name_of_This_Game) click start up there ^^^"%> </p>
 <% end %>
