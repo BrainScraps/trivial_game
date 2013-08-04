@@ -9,6 +9,9 @@ $ ->
     )
   $('#new_game').on('click', new_game_request)
 
+  mixpanel.track("click")
+  mixpanel.track("Start a New new_game")
+
   #
   # This function will send an AJAX request when an answer is clicked
   # It will send the ID of the answer that was clicked as well as the
