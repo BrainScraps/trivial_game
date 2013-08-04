@@ -11,17 +11,19 @@ class HomeController < ApplicationController
   		@scores = session[:scores]
 
       # pick the next question, but if it is on the blacklist, loop until a question
-      # that has not already been asked appears.
+      # that has not already been asked appears. Counter prevents potential infinite loop.
   		@question = Question.all.sample
   		max_questions = Question.count + 1
 
 	  	if blacklist.include?(@question.id)
 	  		counter = 0
-	  		until (!blacklist.include?(@question.id)) || counter == max_questions
-	  			@question = Question.sample
+	  		until ( !blacklist.include?(@question.id)) || counter == max_questions
+	  			@question = Question.all.sample
 	  			counter += 1
 	  		end
 	  	end
+      # add the resulting question to the blacklist for the next round
+      blacklist << @question.id
   	end
   end
 
@@ -41,7 +43,56 @@ class HomeController < ApplicationController
     @question = Question.all.sample
   end
 
-  def answer_chosen
+  def handle_guess
+    # javascript will determine the active player, and change
+    # the background color to represent that player
+
+    # determine the player
+
+    # ######needs to be done############
+    # player =
+
+    # determine the answer
+
+    # ######needs to be done############
+    # answer_chosen =
+
+    # check to see if answer chosen was correct, update points totals if answer was correct
+    if answer_chosen.is_correct?
+      if (player == p1)
+        session[:scores][:p1] += 500
+      elsif (player == p2)
+        session[:scores][:p2] += 500
+      else
+        session[:scores][:p3] += 500
+      end
+    end
+
+    # add to the round (i.e. "question # 2, question #3, etc") from the session variable
+    session[:round] += 1
+
+    # find the current blacklist from the session
+    blacklist = session[:blacklist]
+
+    # pick the next question, but if it is on the blacklist, loop until a question
+    # that has not already been asked appears. Counter prevents potential infinite loop.
+    @question = Question.all.sample
+    max_questions = Question.count + 1
+
+    if blacklist.include?(@question.id)
+      counter = 0
+      until ( !blacklist.include?(@question.id)) || counter == max_questions
+        @question = Question.all.sample
+        counter += 1
+      end
+    end
+    # add the resulting question to the blacklist for the next round
+    blacklist << @question.id
+
+    # set the other variables for the partial
+    @round = session[:round]
+    @scores = session[:scores]
+
   end
 
 
