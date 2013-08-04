@@ -2,7 +2,8 @@ speech_box = $('#speech_box')
 
 # let the player know if they were right and update scoreboard
 
-speech_box.removeClass("p1_color p2_color p3_color")
+speech_box.removeClass("p1_border p2_border p3_border")
+speech_box.addClass("black_border")
 
 $('#score_footer').empty().append("<%= j render partial: '/home/scores', locals: {scores: @scores} %>")
 

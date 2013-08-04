@@ -51,8 +51,8 @@ $ ->
         speech_box.addClass("p2_border")
         body.removeClass("listening")
 
-      # the B key is number 80, representing player3
+      # the P key is number 80, representing player3
       else if event.which is 80
-
-        speech_box.addClass("p3_color")
+        speech_box.removeClass("black_border")
+        speech_box.addClass("p3_border")
         body.removeClass("listening")
