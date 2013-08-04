@@ -9,8 +9,11 @@ $('#score_footer').empty().append("<%= j render partial: '/home/scores', locals:
 
 speech_box.empty().append("<%= j render partial: '/home/response', locals: {correct_answer: @correct_answer} %>")
 
+if <%= @round %> == 3
+  speech_box.empty().append("<%= j render partial: '/home/end_game' %>")
+else
 # after the delay, we show the next question
-next_question = ->
-  speech_box.empty().append("<%= j render partial: '/home/questions', locals: {round: @round, question: @question} %>")
-  $('body').addClass('listening')
-setTimeout next_question, 4000
+  next_question = ->
+    speech_box.empty().append("<%= j render partial: '/home/questions', locals: {round: @round, question: @question} %>")
+    $('body').addClass('listening')
+  setTimeout next_question, 1000

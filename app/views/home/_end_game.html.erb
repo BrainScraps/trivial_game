@@ -1,0 +1,13 @@
+Game over!
+<br>
+<% @player = @scores.max_by{|k,v|v}.first.to_s %>
+
+<% if @player == "p1" %>
+  Player One Wins!
+<% elsif @player == "p2" %>
+  Player Two Wins!
+<% elsif @player == "p3" %>
+  Player Three Wins!
+<% else %>
+  It's a tie, but we don't know why!
+<% end %>

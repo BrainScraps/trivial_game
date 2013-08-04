@@ -7,10 +7,10 @@
 #host_box {
   width: 262px;
   height: 262px;
+  margin-left: 100px;
   float: left;
   bottom:0;
   position: absolute;
-
   background-image: url("/assets/hashstashthecat.png");
 }
 
@@ -26,7 +26,7 @@
   padding-left:100px;
   padding-right:20px;
   margin-top: 10px;
-  margin-right: 15px;
+  margin-right: 50px;
   box-shadow: 10px 10px 5px #888888;
 }
 
@@ -35,13 +35,13 @@
 }
 
 .p1_border {
-  border: 10px solid red;
+  border: 10px solid #FF3D64;
 }
 
 .p2_border {
-  border: 10px solid green;
+  border: 10px solid #47FF75;
 }
 
 .p3_border {
-  border: 10px solid blue;
+  border: 10px solid #3366FF;
 }

@@ -28,6 +28,7 @@ class HomeController < ApplicationController
   end
 
   def start_game
+    # binding.pry
   	#when the user clicks the start button, the round is set to 1 START OVER!!!
   	session[:round] = 1
 
@@ -55,7 +56,7 @@ class HomeController < ApplicationController
     if answer.is_correct?
       session[:scores][player] += 500
       @correct_answer = true
-    else 
+    else
       @correct_answer = false
     end
 
