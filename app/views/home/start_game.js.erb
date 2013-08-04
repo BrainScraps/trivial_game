@@ -1,0 +1,7 @@
+//alert('whoa!');
+
+// document.location.reload(true);
+
+$('#speech_box').empty().append("<%= j render partial: '/home/questions', locals: {round: @round, question: @question} %>")
+
+$('#score_footer').empty().append("<%= j render partial: '/home/scores', locals: {scores: @scores} %>")

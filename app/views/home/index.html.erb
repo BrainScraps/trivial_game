@@ -9,44 +9,16 @@
   <div id="host_box">
     Host Box
     <div id="host">
-      <%= image_tag "https://raw.github.com/emailmejason/solo/master/app/assets/images/octocat.png" %>
+      <%= image_tag "/assets/hashstashthecat.png" %>
     </div>
   </div>
 
   <div id="speech_box">
-    <% if @round %>
-      <p> Here is your question: </p>
-      <span id="question_number">Question Number <%= @round %> </span>
-      <div id="question"><%= @question.content %> </div>
-      <div class="answer" id="a1"> <%= @question.answers[0].content %></div>
-      <div class="answer" id="a2"><%= @question.answers[1].content %></div>
-      <div class="answer" id="a3"><%= @question.answers[2].content %></div>
-      <div class="answer" id="a4"><%= @question.answers[3].content %></div>
-    <% else %>
-      <p><%= "Welcome to The Name of This Game click start up there ^^^"%> </p>
-    <% end %>
-
+    <%= render partial: 'questions', locals: {round: @round, question: @question} %>
   </div>
 </div>
 
 <div id="score_footer">
   Score Box
-  <div class="player_container" id="p1_container">
-    Player One Container
-    <div class="score_box" id="p1_score">Player 1 Score: <%= !@scores.nil? ? @scores[:p1] : "Game not started yet"  %></div>
-    <div class="name_box" id="p1_name">Player 1 Name</div>
-    <div class="key" id="p1_key">A</div>
-  </div>
-  <div class="player_container" id="p2_container">
-    Player Two Container
-    <div class="score_box" id="p2_score">Player 2 Score: <%= !@scores.nil? ? @scores[:p2] : "Game not started yet"  %></div>
-    <div class="name_box" id="p2_name">Player 2 Name</div>
-    <div class="key" id="p1_key">B</div>
-  </div>
-  <div class="player_container" id="p3_container">
-    Player Three Container
-    <div class="score_box" id="p3_score">Player 3 Score: <%= !@scores.nil? ? @scores[:p3] : "Game not started yet"  %></div>
-    <div class="name_box" id="p3_name">Player 3 Name</div>
-    <div class="key" id="p1_key">P</div>
-  </div>
+ <%= render partial: 'scores', locals: {scores: @scores} %>
 </div>

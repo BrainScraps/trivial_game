@@ -25,9 +25,10 @@ nav {
 
 #score_footer {
   border: 4px solid green;
-  float: clear;
+  clear:both;
 }
 div {
+  border: 1px dashed purple;
   height: 100px;
   width: 100px;
 }

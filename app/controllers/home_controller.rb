@@ -34,6 +34,11 @@ class HomeController < ApplicationController
 
   	#array of question id's that have been asked to this group of players
   	session[:blacklist] = []
+
+    # set the first variables for the partial
+    @round = session[:round]
+    @scores = session[:scores]
+    @question = Question.all.sample
   end
 
   def answer_chosen

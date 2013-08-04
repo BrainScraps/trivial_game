@@ -1,0 +1,11 @@
+<% if round %>
+  <p> Here is your question: </p>
+  <span id="question_number">Question Number <%= round %> </span>
+  <div id="question"><%= question.content %> </div>
+  <div class="answer" id="a1"> <%= question.answers[0].content %></div>
+  <div class="answer" id="a2"><%= question.answers[1].content %></div>
+  <div class="answer" id="a3"><%= question.answers[2].content %></div>
+  <div class="answer" id="a4"><%= question.answers[3].content %></div>
+<% else %>
+  <p><%= "Welcome to (The_Name_of_This_Game) click start up there ^^^"%> </p>
+<% end %>
