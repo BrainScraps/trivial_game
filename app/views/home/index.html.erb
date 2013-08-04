@@ -1,18 +1,13 @@
 <nav>
-  Nav Bar
-  <br>
-  <div id="brand_title">Hashstachthecat's HashDash</div>
+  <div id="brand_title">Hashstachtocat's HashDash</div>
   <button id="new_game" class="button">Start a New Game</button>
 </nav>
 
 <div id="game_window">
-  Game Window
   <div id="host_box">
-    Host Box
-
   </div>
 
-  <div id="speech_box">
+  <div id="speech_box" class="black_border">
     <%= render partial: 'questions', locals: {round: @round, question: @question} %>
   </div>
 </div>
