@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       # pick the next question, but if it is on the blacklist, loop until a question
       # that has not already been asked appears. Counter prevents potential infinite loop.
   		@question = Question.all.sample
-  		max_questions = Question.count + 1
+  		max_questions = (Question.count + 1) * 5
 
 	  	if blacklist.include?(@question.id)
 	  		counter = 0
@@ -47,25 +47,16 @@ class HomeController < ApplicationController
     # javascript will determine the active player, and change
     # the background color to represent that player
 
-    # determine the player
-
-    # ######needs to be done############
-    # player =
-
-    # determine the answer
-
-    # ######needs to be done############
-    # answer_chosen =
+    # get the player and answer info from the AJAX request
+    player = params[:player].to_sym
+    answer = Answer.find(params[:answer].to_i)
 
     # check to see if answer chosen was correct, update points totals if answer was correct
-    if answer_chosen.is_correct?
-      if (player == p1)
-        session[:scores][:p1] += 500
-      elsif (player == p2)
-        session[:scores][:p2] += 500
-      else
-        session[:scores][:p3] += 500
-      end
+    if answer.is_correct?
+      session[:scores][player] += 500
+      @correct_answer = true
+    else 
+      @correct_answer = false
     end
 
     # add to the round (i.e. "question # 2, question #3, etc") from the session variable
@@ -77,7 +68,7 @@ class HomeController < ApplicationController
     # pick the next question, but if it is on the blacklist, loop until a question
     # that has not already been asked appears. Counter prevents potential infinite loop.
     @question = Question.all.sample
-    max_questions = Question.count + 1
+    max_questions = (Question.count + 1) * 5
 
     if blacklist.include?(@question.id)
       counter = 0
