@@ -1,10 +1,9 @@
 #question {
   margin-bottom: 20px;
-
 }
 
 .answer {
-  border: 1px solid black;
+  border: 5px solid black;
   -moz-border-radius: 10px;
       -webkit-border-radius: 10px;
       border-radius: 50px;
