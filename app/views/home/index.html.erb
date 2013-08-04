@@ -1,5 +1,6 @@
 <nav>
   Nav Bar
+  <br>
   <div id="brand_title">Hashstachthecat's HashDash</div>
   <button id="new_game" class="button">Start a New Game</button>
 </nav>
@@ -8,9 +9,7 @@
   Game Window
   <div id="host_box">
     Host Box
-    <div id="host">
-      <%= image_tag "/assets/hashstashthecat.png" %>
-    </div>
+
   </div>
 
   <div id="speech_box">
@@ -19,6 +18,5 @@
 </div>
 
 <div id="score_footer">
-  Score Box
  <%= render partial: 'scores', locals: {scores: @scores} %>
 </div>
