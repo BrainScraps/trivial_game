@@ -9,7 +9,7 @@ $('#score_footer').empty().append("<%= j render partial: '/home/scores', locals:
 
 speech_box.empty().append("<%= j render partial: '/home/response', locals: {correct_answer: @correct_answer} %>")
 
-$( "#host_box" ).toggle( "bounce", { times: 1 }, "slow", 3000 )
+$( "#host_box" ).effect( "bounce", { times: 1 }, "slow", 3000 )
 
 
 if <%= @round %> == 6

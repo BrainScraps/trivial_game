@@ -17,8 +17,8 @@ question2.answers.create(:content => "Those lame people that quit after two days
 
 question3 = Question.create(:content => "What is the name of Dwayne's dog?")
 
-question3.answers.create(:content => "Spot", :is_correct => false)
-question3.answers.create(:content => "Sport", :is_correct => true)
+question3.answers.create(:content => "Sport", :is_correct => false)
+question3.answers.create(:content => "Scout", :is_correct => true)
 question3.answers.create(:content => "Sea Dramas", :is_correct => false)
 question3.answers.create(:content => "Dwayne has a cat", :is_correct => false)
 
