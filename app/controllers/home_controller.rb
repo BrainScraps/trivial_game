@@ -28,7 +28,6 @@ class HomeController < ApplicationController
   end
 
   def start_game
-    # binding.pry
   	#when the user clicks the start button, the round is set to 1 START OVER!!!
   	session[:round] = 1
 
