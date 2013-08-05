@@ -12,7 +12,7 @@ speech_box.empty().append("<%= j render partial: '/home/response', locals: {corr
 $( "#host_box" ).toggle( "bounce", { times: 1 }, "slow", 3000 )
 
 
-if <%= @round %> == 3
+if <%= @round %> == 6
   speech_box.empty().append("<%= j render partial: '/home/end_game' %>")
 else
 # after the delay, we show the next question
