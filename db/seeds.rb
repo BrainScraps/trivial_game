@@ -29,10 +29,10 @@ question4.answers.create(:content => "Jack", :is_correct => false)
 question4.answers.create(:content => "Ace", :is_correct => false)
 question4.answers.create(:content => "King", :is_correct => true)
 
-question5 = Question.create(:content => "90% of your dreams are about:")
+question5 = Question.create(:content => "90% of Neal's dreams are about:")
 
 question5.answers.create(:content => "Insecurity", :is_correct => false)
-question5.answers.create(:content => "Adventure", :is_correct => false)
+question5.answers.create(:content => "Adventures", :is_correct => false)
 question5.answers.create(:content => "Sex", :is_correct => true)
 question5.answers.create(:content => "Ruby on Rails", :is_correct => false)
 
