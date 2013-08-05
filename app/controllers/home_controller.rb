@@ -25,6 +25,7 @@ class HomeController < ApplicationController
       # add the resulting question to the blacklist for the next round
       blacklist << @question.id
   	end
+
   end
 
   def start_game

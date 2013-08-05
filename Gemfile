@@ -9,10 +9,11 @@ gem 'pg'
 
 gem 'dotenv-rails'
 gem 'quiet_assets'
-
-group :development do
   gem 'pry-rails'
   gem 'pry-debugger'
+
+group :development do
+
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
@@ -20,10 +21,27 @@ group :development do
 end
 
 group :test, :development do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'capybara'
+
   gem 'selenium-webdriver'
+  gem 'coffee-rails-source-maps'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'pry-stack_explorer'
+
+  gem 'annotate'
+
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+
 end
 
 gem 'coffee-rails', '~> 3.2.1'
