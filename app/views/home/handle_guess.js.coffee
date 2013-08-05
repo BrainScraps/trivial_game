@@ -19,4 +19,4 @@ else
   next_question = ->
     speech_box.empty().append("<%= j render partial: '/home/questions', locals: {round: @round, question: @question} %>")
     $('body').addClass('listening')
-  setTimeout next_question, 1000
+  setTimeout next_question, 4000

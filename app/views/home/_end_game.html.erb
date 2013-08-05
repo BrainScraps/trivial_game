@@ -1,15 +1,14 @@
-Game over!
+<h2>Game over!</h2>
 <br>
 <% @player = @scores.max_by{|k,v|v}.first.to_s %>
 
 <% if @player == "p1" %>
-  Player One Wins!
+  <h3>Player 1 Wins!</h3>
 <% elsif @player == "p2" %>
-  Player Two Wins!
+  <h3>Player 2 Wins!</h3>
 <% elsif @player == "p3" %>
-  Player Three Wins!
+  <h3>Player 3 Wins!</h3>
 <% else %>
-  It's a tie, but we don't know why!
-  <%= image_tag "http://octodex.github.com/images/deckfailcat.png" %>
+  <h3>It's a tie, but we don't know why!</h3>
 <% end %>
 <%= image_tag "http://octodex.github.com/images/Professortocat_v2.png" %>
