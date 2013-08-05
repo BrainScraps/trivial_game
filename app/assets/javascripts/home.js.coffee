@@ -10,7 +10,7 @@ $ ->
   $('#new_game').on('click', new_game_request)
 
   mixpanel.track("click")
-  mixpanel.track("Start a New new_game")
+  mixpanel.track("Start")
 
   #
   # This function will send an AJAX request when an answer is clicked
