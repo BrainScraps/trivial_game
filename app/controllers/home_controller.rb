@@ -13,7 +13,7 @@ class HomeController < ApplicationController
       # pick the next question, but if it is on the blacklist, loop until a question
       # that has not already been asked appears. Counter prevents potential infinite loop.
   		@question = Question.all.sample
-  		max_questions = (Question.count + 1) * 5
+  		max_questions = (Question.count + 1) * 50
 
 	  	if blacklist.include?(@question.id)
 	  		counter = 0
@@ -68,7 +68,7 @@ class HomeController < ApplicationController
     # pick the next question, but if it is on the blacklist, loop until a question
     # that has not already been asked appears. Counter prevents potential infinite loop.
     @question = Question.all.sample
-    max_questions = (Question.count + 1) * 5
+    max_questions = (Question.count + 1) * 50
 
     if blacklist.include?(@question.id)
       counter = 0

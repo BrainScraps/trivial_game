@@ -12,7 +12,7 @@ question2 = Question.create(:content => "Our class was most upset by the loss of
 
 question2.answers.create(:content => "The old classroom", :is_correct => false)
 question2.answers.create(:content => "Sleep", :is_correct => false)
-question2.answers.create(:content => "Snacks", :is_correct => false)
+question2.answers.create(:content => "Snacks", :is_correct => true)
 question2.answers.create(:content => "Those lame people that quit after two days", :is_correct => false)
 
 question3 = Question.create(:content => "What is the name of Dwayne's dog?")
