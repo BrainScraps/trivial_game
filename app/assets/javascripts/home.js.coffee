@@ -16,6 +16,7 @@ $ ->
   # This function will send an AJAX request when an answer is clicked
   # It will send the ID of the answer that was clicked as well as the
   # 'name' of the player who was answering (p1, p2, or p3)
+  # Can currently click on answers before buzzing in (p1 is given points by default)
 
   $('body').on 'click', '.answer', ->
     answer_id = $(this).attr('id')
@@ -36,14 +37,13 @@ $ ->
    # ALTERNATE KEYCODES
    # the A key is number 97, representing player1
    # the B key is number 98, representing player2
-   # the B key is number 112, representing player3
+   # the P key is number 112, representing player3
 
     # this function uses the number_of_keypresses variable
     # to deactivate itself after the first valid keypress
     if body.hasClass("listening")
       # the A key is number 65, representing player1
       if event.which is 65
-        #speech_box.addClass("p1_color")
         speech_box.removeClass("black_border")
         speech_box.addClass("p1_border")
         body.removeClass("listening")
