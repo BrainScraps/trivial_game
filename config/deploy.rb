@@ -1,4 +1,6 @@
 require "bundler/capistrano"
+require 'capistrano_database_yml'
+
 #load 'lib/deploy/seed' #include if you need to load seed data with cap deploy:seed 
 
 server "hashdash.izk.me", :app, :web, :db, :primary => true
@@ -23,7 +25,7 @@ after "deploy", "deploy:cleanup" # keep only the last 5 releases
 set :scm, "git"
 set :scm_verbose, true
 set :repository, "git@github.com:BrainScraps/trivial_game.git"
-set :branch, "master"
+set :branch, "production"
 
 default_run_options[:pty] = true # Must be set for the password prompt from git to work
 ssh_options[:forward_agent] = true
