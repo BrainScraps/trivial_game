@@ -52,6 +52,7 @@ gem 'unicorn'
 
 # Deploy with Capistrano
 gem 'capistrano'
+gem 'newrelic_rpm'
 
 # To use debugger
 # gem 'debugger'

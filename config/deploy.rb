@@ -1,5 +1,7 @@
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), 'deploy')
 require "bundler/capistrano"
-require 'capistrano_database_yml'
+
+require "capistrano_database_yml"
 
 #load 'lib/deploy/seed' #include if you need to load seed data with cap deploy:seed 
 
